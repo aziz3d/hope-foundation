@@ -111,8 +111,8 @@ A world where every individual has access to opportunities that enable them to t
 1. **Clone the repository**
 
    ```bash
-   git clone <repository-url>
-   cd react-none-profit
+   git clone https://github.com/aziz3d/hope-foundation.git
+   cd hope-foundation
    ```
 
 2. **Install dependencies**
@@ -210,9 +210,9 @@ The application uses mock data for development and demonstration:
 ## Contributing
 
 1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
+2. Create a feature branch (`git checkout -b feature/added-new-feature`)
+3. Commit your changes (`git commit -m 'Added some new features'`)
+4. Push to the branch (`git push origin feature/added-new-feature`)
 5. Open a Pull Request
 
 ## License
