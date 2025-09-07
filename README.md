@@ -2,6 +2,8 @@
 
 Modern, responsive React application for none profit organizations, for nonprofit organizations where they are dedicated for creating positive change through education, healthcare, and sustainable development programs.
 
+![Hope Foundation Website](public/Hope.png)
+
 ## Project Overview Demo Data
 
 AFG Hope Foundation is committed to empowering communities worldwide through innovative programs and partnerships. This website serves as the digital face of our organization, showcasing our mission, projects, and impact while providing easy ways for visitors to get involved, donate, and stay connected.
