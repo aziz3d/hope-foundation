@@ -54,26 +54,26 @@ const Home = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mt-16">
           <div className="fade-in">
             {/* Typography */}
-           <div className="text-hero-modern text-7xl mb-4 tracking-wide">
+           <div className="text-hero-modern text-5xl sm:text-6xl md:text-7xl mb-4 sm:mb-6 tracking-wide">
             Transform
-            <span className="ml-[20px] bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-300 bg-clip-text text-transparent">
+            <span className="ml-0 sm:ml-[20px] bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-300 bg-clip-text text-transparent block sm:inline">
             Communities
             </span>
           </div>
 
             
-            <p className="text-lg font-semibold md:text-xl text-white mb-12 max-w-2xl mx-auto leading-relaxed font-light">
+            <p className="text-base sm:text-lg font-semibold text-white mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed font-light">
               Join our mission to empower communities worldwide through sustainable development, 
               education, and healthcare initiatives that create meaningful change.
             </p>
             
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-12 sm:mb-16">
               <Link to="/donate">
-                <button className="group relative px-8 py-4 bg-white text-gray-900 rounded-2xl font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-white/25">
-                  <span className="relative z-10 flex items-center">
+                <button className="group relative px-6 py-3 sm:px-8 sm:py-4 bg-white text-gray-900 rounded-2xl font-semibold text-base sm:text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-white/25 w-full sm:w-auto">
+                  <span className="relative z-10 flex items-center justify-center sm:justify-start">
                     Start Your Impact
-                    <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+                    <svg className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"/>
                     </svg>
                   </span>
@@ -82,21 +82,21 @@ const Home = () => {
                 </button>
               </Link>
               <Link to="/about">
-                <button className="px-8 py-4 border-2 border-white/30 text-white rounded-2xl font-semibold text-lg backdrop-blur-sm hover:bg-white/10 hover:border-white/50 transition-all duration-300">
+                <button className="px-6 py-3 sm:px-8 sm:py-4 border-2 border-white/30 text-white rounded-2xl font-semibold text-base sm:text-lg backdrop-blur-sm hover:bg-white/10 hover:border-white/50 transition-all duration-300 w-full sm:w-auto">
                   Discover Our Story
                 </button>
               </Link>
             </div>
 
             {/* Impact Stats */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-4xl mx-auto">
               {impactStats.map((stat, index) => (
-                <div key={index} className="hero-card-modern p-6 text-center group hover:scale-105 transition-all duration-300">
-                  <div className="text-3xl md:text-4xl font-black text-white mb-2 group-hover:scale-110 transition-transform">
+                <div key={index} className="hero-card-modern p-4 sm:p-6 text-center group hover:scale-105 transition-all duration-300">
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-2 group-hover:scale-110 transition-transform">
                     {stat.number}
                   </div>
-                  <div className="text-white/90 font-semibold mb-1 text-sm md:text-base">{stat.label}</div>
-                  <div className="text-white/60 text-xs md:text-sm leading-tight">{stat.description}</div>
+                  <div className="text-white/90 font-semibold mb-1 text-xs sm:text-sm md:text-base">{stat.label}</div>
+                  <div className="text-white/60 text-xs leading-tight">{stat.description}</div>
                 </div>
               ))}
             </div>
@@ -121,36 +121,36 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              <Card className="p-8 hover:shadow-2xl transition-all duration-500">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <div className="w-6 h-6 text-blue-600">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
+            <div className="space-y-6 sm:space-y-8">
+              <Card className="p-6 sm:p-8 hover:shadow-2xl transition-all duration-500">
+                <div className="flex items-start space-x-3 sm:space-x-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <div className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600">
                       <svg fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                       </svg>
                     </div>
                   </div>
                   <div>
-                    <h3 className="heading-card text-gray-900 mb-3">Our Mission</h3>
-                    <p className="text-body text-gray-600">{organizationInfo.mission}</p>
+                    <h3 className="heading-card text-gray-900 mb-2 sm:mb-3">Our Mission</h3>
+                    <p className="text-body text-gray-600 text-sm sm:text-base">{organizationInfo.mission}</p>
                   </div>
                 </div>
               </Card>
 
-              <Card className="p-8 hover:shadow-2xl transition-all duration-500">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <div className="w-6 h-6 text-green-600">
+              <Card className="p-6 sm:p-8 hover:shadow-2xl transition-all duration-500">
+                <div className="flex items-start space-x-3 sm:space-x-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <div className="w-5 h-5 sm:w-6 sm:h-6 text-green-600">
                       <svg fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                       </svg>
                     </div>
                   </div>
                   <div>
-                    <h3 className="heading-card text-gray-900 mb-3">Our Vision</h3>
-                    <p className="text-body text-gray-600">{organizationInfo.vision}</p>
+                    <h3 className="heading-card text-gray-900 mb-2 sm:mb-3">Our Vision</h3>
+                    <p className="text-body text-gray-600 text-sm sm:text-base">{organizationInfo.vision}</p>
                   </div>
                 </div>
               </Card>
@@ -160,10 +160,10 @@ const Home = () => {
               <img
                 src="/images/none-profit_15.jpg"
                 alt="Community Impact"
-                className="rounded-2xl shadow-2xl w-full h-96 object-cover"
+                className="rounded-2xl shadow-2xl w-full h-64 sm:h-80 md:h-96 object-cover"
               />
-              <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-orange-400 rounded-full opacity-20 blur-xl"></div>
-              <div className="absolute -top-6 -right-6 w-32 h-32 bg-blue-400 rounded-full opacity-20 blur-xl"></div>
+              <div className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 w-16 h-16 sm:w-24 sm:h-24 bg-orange-400 rounded-full opacity-20 blur-xl"></div>
+              <div className="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 w-20 h-20 sm:w-32 sm:h-32 bg-blue-400 rounded-full opacity-20 blur-xl"></div>
             </div>
           </div>
         </div>
