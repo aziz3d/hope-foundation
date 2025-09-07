@@ -216,6 +216,31 @@ If you want to play with the mock data its in data/mockData.js modify it accordi
 4. Push to the branch (`git push origin feature/added-feature-name`)
 5. Open a Pull Request
 
+## Updates and Improvements
+
+### Enhanced Data Management
+
+- Integrated TanStack Query (React Query) for server state management
+- Implemented caching, background updates, and request deduplication
+- Added React Query Devtools for development debugging
+- Created a comprehensive service layer with mock API simulation
+
+### Performance Optimizations
+
+- Implemented code splitting and lazy loading where appropriate
+- Optimized images and assets for faster loading times
+- Added proper meta tags and SEO considerations
+- Utilized React.memo and useCallback for performance optimization
+
+### Improved User Experience
+
+- Integrated React Spinners for visualizing loading states during data fetching
+- Added ClimbingBoxLoader and other spinner components for better user feedback
+- Implemented loading indicators on all pages that fetch data from the API
+- Enhanced perceived performance with smooth loading animations
+
+---
+
 ## License
 
 This project is licensed under the MIT License.
