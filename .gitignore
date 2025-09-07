@@ -12,8 +12,6 @@ dist
 dist-ssr
 *.local
 
-# misc
-PRD.md
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

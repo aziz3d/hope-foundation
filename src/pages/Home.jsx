@@ -2,9 +2,37 @@ import React from 'react';
 import { Link } from 'react-router';
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
-import { organizationInfo, projects, testimonials, impactStats, donationTiers } from '../data/mockData';
+import { useOrganizationInfo, useProjects, useTestimonials, useImpactStats, useDonationTiers } from '../services/queries';
+import { ClimbingBoxLoader } from 'react-spinners';
 
 const Home = () => {
+  const { data: organizationInfo, isLoading: isOrganizationLoading } = useOrganizationInfo();
+  const { data: projects, isLoading: isProjectsLoading } = useProjects();
+  const { data: testimonials, isLoading: isTestimonialsLoading } = useTestimonials();
+  const { data: impactStats, isLoading: isImpactStatsLoading } = useImpactStats();
+  const { data: donationTiers, isLoading: isDonationTiersLoading } = useDonationTiers();
+
+  // Show loading state while data is being fetched
+  if (isOrganizationLoading || isProjectsLoading || isTestimonialsLoading || 
+      isImpactStatsLoading || isDonationTiersLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <ClimbingBoxLoader color="#3B82F6" size={35} />
+      </div>
+    );
+  }
+
+  // Show error state if any queries failed
+  if (!organizationInfo || !projects || !testimonials || !impactStats || !donationTiers) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <p className="text-red-500">Failed to load data. Please try again later.</p>
+        </div>
+      </div>
+    );
+  }
+
   const featuredProjects = projects.filter(project => project.status === 'active').slice(0, 3);
 
   return (

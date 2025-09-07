@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
-import { donationTiers, projects } from '../data/mockData';
+import { useDonationTiers, useProjects } from '../services/queries';
 
 const Donate = () => {
   const [selectedAmount, setSelectedAmount] = useState(50);
@@ -21,6 +21,29 @@ const Donate = () => {
   });
   const [paymentMethod, setPaymentMethod] = useState('card');
 
+  const { data: donationTiers, isLoading: isDonationTiersLoading } = useDonationTiers();
+  const { data: projects, isLoading: isProjectsLoading } = useProjects();
+
+  // Show loading state while data is being fetched
+  if (isDonationTiersLoading || isProjectsLoading) {
+    return (
+      <div className="min-h-screen pt-20 flex items-center justify-center">
+        <ClimbingBoxLoader color="#3B82F6" size={35} />
+      </div>
+    );
+  }
+
+  // Show error state if any queries failed
+  if (!donationTiers || !projects) {
+    return (
+      <div className="min-h-screen pt-20 flex items-center justify-center">
+        <div className="text-center">
+          <p className="text-red-500">Failed to load donation information. Please try again later.</p>
+        </div>
+      </div>
+    );
+  }
+
   const handleInputChange = (e) => {
     setDonorInfo({
       ...donorInfo,
@@ -31,7 +54,7 @@ const Donate = () => {
   const handleDonationSubmit = (e) => {
     e.preventDefault();
     const amount = customAmount || selectedAmount;
-    alert(`Thank you for your ${donationType} donation of $${amount}! This is a mock form - no actual payment was processed.`);
+    alert(`Thank you for your ${donationType} donation of ${amount}! This is a mock form - no actual payment was processed.`);
   };
 
   const activeProjects = projects.filter(project => project.status === 'active');

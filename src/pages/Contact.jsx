@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
-import { contactInfo, teamMembers } from '../data/mockData';
+import { useContactInfo, useTeamMembers } from '../services/queries';
+import { ClimbingBoxLoader } from 'react-spinners';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -11,6 +12,29 @@ const Contact = () => {
     message: '',
     inquiryType: 'general'
   });
+
+  const { data: contactInfo, isLoading: isContactInfoLoading } = useContactInfo();
+  const { data: teamMembers, isLoading: isTeamMembersLoading } = useTeamMembers();
+
+  // Show loading state while data is being fetched
+  if (isContactInfoLoading || isTeamMembersLoading) {
+    return (
+      <div className="min-h-screen pt-20 flex items-center justify-center">
+        <ClimbingBoxLoader color="#3B82F6" size={35} />
+      </div>
+    );
+  }
+
+  // Show error state if any queries failed
+  if (!contactInfo || !teamMembers) {
+    return (
+      <div className="min-h-screen pt-20 flex items-center justify-center">
+        <div className="text-center">
+          <p className="text-red-500">Failed to load contact information. Please try again later.</p>
+        </div>
+      </div>
+    );
+  }
 
   const handleInputChange = (e) => {
     setFormData({

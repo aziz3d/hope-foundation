@@ -1,16 +1,16 @@
 # Hope Foundation - Nonprofit Organization Website
 
-A modern, responsive React application for Hope Foundation, a nonprofit organization dedicated to creating positive change through education, healthcare, and sustainable development programs.
+Modern, responsive React application for none profit organizations, for nonprofit organizations where they are dedicated for creating positive change through education, healthcare, and sustainable development programs.
 
-## Project Overview
+## Project Overview Demo Data
 
-Hope Foundation is committed to empowering communities worldwide through innovative programs and partnerships. This website serves as the digital face of our organization, showcasing our mission, projects, and impact while providing easy ways for visitors to get involved, donate, and stay connected.
+AFG Hope Foundation is committed to empowering communities worldwide through innovative programs and partnerships. This website serves as the digital face of our organization, showcasing our mission, projects, and impact while providing easy ways for visitors to get involved, donate, and stay connected.
 
-### Mission
+### Demo Mission
 
 To create lasting positive change in underserved communities through education, healthcare, and sustainable development programs.
 
-### Vision
+### Demo Vision
 
 A world where every individual has access to opportunities that enable them to thrive and contribute to their community's growth.
 
@@ -18,10 +18,10 @@ A world where every individual has access to opportunities that enable them to t
 
 ### Home Page
 
-- **Hero Section**: Compelling hero with background image, mission statement, and call-to-action buttons
+- **Hero Section**: Compelling hero with background image, mission statement, and call to action buttons
 - **Mission & Vision**: Interactive cards highlighting our core purpose
 - **Featured Projects**: Grid display of active projects with progress bars and impact metrics
-- **Impact Statistics**: Real-time stats showing lives impacted, projects completed, and volunteers
+- **Impact Statistics**: Real time stats showing lives impacted, projects completed, and volunteers
 - **Testimonials**: Stories from beneficiaries and community leaders
 - **Donation Tiers**: Quick donation options with clear impact statements
 - **Newsletter Signup**: Email subscription for updates and stories
@@ -46,10 +46,10 @@ A world where every individual has access to opportunities that enable them to t
 
 - **Donation Tiers**: Preset amounts ($25, $50, $100, $250) with impact descriptions
 - **Custom Amounts**: Flexible donation options
-- **Donation Types**: One-time or monthly recurring donations
+- **Donation Types**: One time or monthly recurring donations
 - **Project Selection**: Direct donations to specific projects
 - **Donor Information Form**: Complete donor details collection
-- **Payment Methods**: Credit/Debit card and PayPal integration (mock)
+- **Payment Methods**: Credit/Debit card and PayPal integration (mock/demo)
 - **Donation Summary**: Clear breakdown of donation details
 - **Impact Information**: What each donation tier accomplishes
 
@@ -80,7 +80,7 @@ A world where every individual has access to opportunities that enable them to t
 
 ### Design & UI
 
-- **Responsive Design**: Mobile-first approach with Tailwind CSS
+- **Responsive Design**: Mobile first approach with Tailwind CSS
 - **Modern UI Components**: Custom Button, Card, and UI components
 - **Accessibility**: WCAG compliant with proper ARIA labels and keyboard navigation
 - **Visual Hierarchy**: Clear typography and spacing using Tailwind classes
@@ -93,7 +93,7 @@ A world where every individual has access to opportunities that enable them to t
 
 ### Functionality
 
-- **React Router**: Client-side routing for seamless navigation
+- **React Router**: Client side routing for seamless navigation
 - **Form Handling**: Comprehensive forms with validation
 - **Modal Dialogs**: Interactive project details and application forms
 - **State Management**: React hooks for component state
@@ -111,8 +111,8 @@ A world where every individual has access to opportunities that enable them to t
 1. **Clone the repository**
 
    ```bash
-   git clone <repository-url>
-   cd react-none-profit
+   git clone https://github.com/aziz3d/hope-foundation.git
+   cd hope-foundation
    ```
 
 2. **Install dependencies**
@@ -128,7 +128,7 @@ A world where every individual has access to opportunities that enable them to t
    ```
 
 4. **Open your browser**
-   Navigate to `http://localhost:5173` to view the application
+   Navigate to `http://localhost:5173` to view the application locally
 
 ### Build for Production
 
@@ -136,7 +136,7 @@ A world where every individual has access to opportunities that enable them to t
 npm run build
 ```
 
-The built files will be in the `dist/` directory.
+The built files will be in the `dist/` directory in your main application directory
 
 ## Project Structure
 
@@ -172,7 +172,7 @@ src/
 
 - **Primary**: Blue tones for trust and reliability
 - **Secondary**: Green tones for growth and sustainability
-- **Accent**: Orange/yellow for calls-to-action
+- **Accent**: light blue for calls to action
 - **Neutral**: Grays and whites for clean, professional look
 
 ### Typography
@@ -189,7 +189,8 @@ src/
 
 ## Data Structure
 
-The application uses mock data for development and demonstration:
+The application uses mock data for development and demonstration purposes:
+If you want to play with the mock data its in data/mockData.js modify it according to your requirements:
 
 - **Organization Info**: Mission, vision, stats
 - **Team Members**: Profiles with photos and bios
@@ -210,21 +211,30 @@ The application uses mock data for development and demonstration:
 ## Contributing
 
 1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
+2. Create a feature branch (`git checkout -b feature/added-feature-name`)
+3. Commit your changes (`git commit -m 'added-feature-description'`)
+4. Push to the branch (`git push origin feature/added-feature-name`)
 5. Open a Pull Request
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License.
 
-## Contact
+---
 
-**Hope Foundation**
+## Contact Me
+
+#### Questions and Feedback
+
+**If you have questions or feedback please send me email**
 
 - Email: sunrise300@gmail.com
 - Website: http://pixelandcode.pro
 - Developer: Aziz Khan
+
+---
+
+Please feel free to use it on as much domains as you want, it will be free forever, i will keep maintaining and improving it in the future.
+If you think this can be a help for you or someone else please consider staring it, much appreciated.
 
 ---

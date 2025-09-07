@@ -1,5 +1,5 @@
 import React from 'react';
-import { organizationInfo } from '../data/mockData';
+// import { organizationInfo } from '../data/mockData';
 
 const PrivacyPolicy = () => {
   return (

@@ -1,9 +1,33 @@
 import React from 'react';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
-import { organizationInfo, teamMembers, impactStats } from '../data/mockData';
+import { useOrganizationInfo, useTeamMembers, useImpactStats } from '../services/queries';
+import { ClimbingBoxLoader } from 'react-spinners';
 
 const About = () => {
+  const { data: organizationInfo, isLoading: isOrganizationLoading } = useOrganizationInfo();
+  const { data: teamMembers, isLoading: isTeamLoading } = useTeamMembers();
+  const { data: impactStats, isLoading: isImpactStatsLoading } = useImpactStats();
+
+  // Show loading state while data is being fetched
+  if (isOrganizationLoading || isTeamLoading || isImpactStatsLoading) {
+    return (
+      <div className="min-h-screen pt-20 flex items-center justify-center">
+        <ClimbingBoxLoader color="#3B82F6" size={35} />
+      </div>
+    );
+  }
+
+  // Show error state if any queries failed
+  if (!organizationInfo || !teamMembers || !impactStats) {
+    return (
+      <div className="min-h-screen pt-20 flex items-center justify-center">
+        <div className="text-center">
+          <p className="text-red-500">Failed to load data. Please try again later.</p>
+        </div>
+      </div>
+    );
+  }
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}

@@ -1,11 +1,35 @@
 import React, { useState } from 'react';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
-import { projects } from '../data/mockData';
+import { useProjects, useProjectById } from '../services/queries';
+import { ClimbingBoxLoader } from 'react-spinners';
 
 const Projects = () => {
   const [filter, setFilter] = useState('all');
-  const [selectedProject, setSelectedProject] = useState(null);
+  const [selectedProjectId, setSelectedProjectId] = useState(null);
+  
+  const { data: projects, isLoading } = useProjects();
+  // const { data: selectedProject } = useProjectById(selectedProjectId);
+
+  // Show loading state while data is being fetched
+  if (isLoading) {
+    return (
+      <div className="min-h-screen pt-20 flex items-center justify-center">
+        <ClimbingBoxLoader color="#3B82F6" size={35} />
+      </div>
+    );
+  }
+
+  // Show error state if query failed
+  if (!projects) {
+    return (
+      <div className="min-h-screen pt-20 flex items-center justify-center">
+        <div className="text-center">
+          <p className="text-red-500">Failed to load projects. Please try again later.</p>
+        </div>
+      </div>
+    );
+  }
 
   const filteredProjects = filter === 'all' 
     ? projects 
@@ -13,8 +37,10 @@ const Projects = () => {
 
   const categories = [...new Set(projects.map(project => project.category))];
 
-  const ProjectModal = ({ project, onClose }) => {
-    if (!project) return null;
+  const ProjectModal = ({ projectId, onClose }) => {
+    const { data: project } = useProjectById(projectId);
+    
+    if (!projectId || !project) return null;
 
     return (
       <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
@@ -195,7 +221,7 @@ const Projects = () => {
                       <Button 
                         variant="outline" 
                         size="sm"
-                        onClick={() => setSelectedProject(project)}
+                        onClick={() => setSelectedProjectId(project.id)}
                       >
                         Learn More
                       </Button>
@@ -305,8 +331,8 @@ const Projects = () => {
 
       {/* Project Modal */}
       <ProjectModal 
-        project={selectedProject} 
-        onClose={() => setSelectedProject(null)} 
+        projectId={selectedProjectId} 
+        onClose={() => setSelectedProjectId(null)} 
       />
     </div>
   );

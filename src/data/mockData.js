@@ -1,4 +1,4 @@
-// Mock data AF Hope Foundation
+// Mock data AFG Hope Foundation
 
 export const organizationInfo = {
   name: "Hope Foundation",

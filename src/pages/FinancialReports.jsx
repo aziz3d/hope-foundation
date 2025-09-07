@@ -1,9 +1,33 @@
 import React from 'react';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
-import { organizationInfo, impactStats } from '../data/mockData';
+import { useOrganizationInfo, useImpactStats } from '../services/queries';
+import { ClimbingBoxLoader } from 'react-spinners';
 
 const FinancialReports = () => {
+  const { data: organizationInfo, isLoading: isOrganizationInfoLoading } = useOrganizationInfo();
+  const { data: impactStats, isLoading: isImpactStatsLoading } = useImpactStats();
+
+  // Show loading state while data is being fetched
+  if (isOrganizationInfoLoading || isImpactStatsLoading) {
+    return (
+      <div className="min-h-screen pt-20 flex items-center justify-center">
+        <ClimbingBoxLoader color="#3B82F6" size={35} />
+      </div>
+    );
+  }
+
+  // Show error state if any queries failed
+  if (!organizationInfo || !impactStats) {
+    return (
+      <div className="min-h-screen pt-20 flex items-center justify-center">
+        <div className="text-center">
+          <p className="text-red-500">Failed to load financial reports. Please try again later.</p>
+        </div>
+      </div>
+    );
+  }
+
   const financialData = {
     totalRevenue: 2850000,
     programExpenses: 2707500,
