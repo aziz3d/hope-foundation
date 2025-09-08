@@ -16,7 +16,7 @@ const Footer = () => {
 
   const handleNewsletterSubmit = (e) => {
     e.preventDefault();
-    // Mock newsletter signup
+    // Newsletter signup
     alert('Thank you for subscribing to our newsletter!');
     setEmail('');
   };
@@ -39,11 +39,11 @@ const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center sm:text-left">
           {/* Organization Info */}
           <div className="lg:col-span-1">
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-12 h-10 bg-gradient-to-br from-blue-600 to-blue-900  flex items-center justify-center">
+            <div className="flex items-center justify-center sm:justify-start space-x-2 mb-4">
+              <div className="w-12 h-10 bg-gradient-to-br from-blue-600 to-blue-900 flex items-center justify-center">
                 <span className="text-white font-bold text-lg">AFG</span>
               </div>
               <h3 className="text-xl font-bold">{orgInfo.name}</h3>
@@ -51,7 +51,7 @@ const Footer = () => {
             <p className="text-gray-300 mb-4 text-sm leading-relaxed">
               {orgInfo.mission}
             </p>
-            <div className="flex space-x-4">
+            <div className="flex justify-center sm:justify-start space-x-4">
               {social.map((socialItem) => (
                 <a
                   key={socialItem.platform}
@@ -121,7 +121,7 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Stay Connected</h4>
             <div className="space-y-3 mb-6">
-              <div className="flex items-center space-x-2 text-sm text-gray-300">
+              <div className="flex items-center justify-center sm:justify-start space-x-2 text-sm text-gray-300">
                 <div className="w-4 h-4">
                   <svg fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
@@ -129,7 +129,7 @@ const Footer = () => {
                 </div>
                 <span>{contact.address}</span>
               </div>
-              <div className="flex items-center space-x-2 text-sm text-gray-300">
+              <div className="flex items-center justify-center sm:justify-start space-x-2 text-sm text-gray-300">
                 <div className="w-4 h-4">
                   <svg fill="currentColor" viewBox="0 0 24 24">
                     <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
@@ -137,7 +137,7 @@ const Footer = () => {
                 </div>
                 <span>{contact.phone}</span>
               </div>
-              <div className="flex items-center space-x-2 text-sm text-gray-300">
+              <div className="flex items-center justify-center sm:justify-start space-x-2 text-sm text-gray-300">
                 <div className="w-4 h-4">
                   <svg fill="currentColor" viewBox="0 0 24 24">
                     <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
@@ -150,7 +150,7 @@ const Footer = () => {
             {/* Newsletter Signup */}
             <form onSubmit={handleNewsletterSubmit} className="space-y-3">
               <h5 className="text-sm font-medium">Subscribe to our newsletter</h5>
-              <div className="flex space-x-2">
+              <div className="flex flex-col sm:flex-row sm:space-x-2 space-y-2 sm:space-y-0">
                 <input
                   type="email"
                   value={email}
@@ -159,7 +159,7 @@ const Footer = () => {
                   className="flex-1 px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg text-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   required
                 />
-                <Button type="submit" size="sm" variant="primary">
+                <Button type="submit" size="sm" variant="primary" className="sm:w-auto w-full">
                   Subscribe
                 </Button>
               </div>
@@ -169,10 +169,10 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm">
+          <p className="text-gray-400 text-center">
             © {new Date().getFullYear()} {orgInfo.name}. All rights reserved. Developed by <a href="http://pixelandcode.pro">Aziz Khan</a>
           </p>
-          <div className="flex space-x-6 mt-4 sm:mt-0">
+          <div className="flex flex-wrap justify-center sm:justify-end space-x-6 mt-4 sm:mt-0">
             <Link to="/privacy-policy" className="text-gray-400 hover:text-white text-sm transition-colors">
               Privacy Policy
             </Link>

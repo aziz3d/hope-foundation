@@ -249,6 +249,7 @@ If you want to play with the mock data its in data/mockData.js modify it accordi
 - Enhanced overall mobile user experience with better spacing and element sizing
 - Adjusted mission and vision section for optimal mobile viewing
 - Implemented responsive design principles throughout the application for seamless mobile experience
+- Updated footer component to center all text on mobile devices while maintaining desktop layout
 
 ---
 
